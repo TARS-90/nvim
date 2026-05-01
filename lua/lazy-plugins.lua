@@ -1,9 +1,7 @@
 require("lazy").setup({
 
-	"tpope/vim-commentary",
-	"nvim-lua/plenary.nvim",
-	"mfussenegger/nvim-jdtls",
-	"neovim/nvim-lspconfig",
+	{ "tpope/vim-commentary" },
+	{ "nvim-lua/plenary.nvim" },
 
 	{
 		"windwp/nvim-autopairs",
@@ -31,7 +29,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		lazy = false,
 		config = function()
-			require("nvim-treesitter.configs").setup {
+			require("nvim-treesitter.config").setup {
 				ensure_installed = { "lua", "python", "java", "c", "cpp", "c_sharp", "bash", "ada" },
 				highlight = { enable = true },
 				indent = { enable = true },
@@ -60,10 +58,3 @@ require("lazy").setup({
 		},
 	},
 }, {})
-
--- === LSP dla C/C++ ===
-require("lspconfig").clangd.setup {
-    cmd = { "clangd" },
-    root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1] or vim.fn.getcwd()),
-    capabilities = require("cmp_nvim_lsp").default_capabilities(),
-}
