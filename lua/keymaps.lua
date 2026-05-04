@@ -6,4 +6,3 @@ vim.g.mapleader=" "
 
 vim.keymap.set("n", "K", ":m .-2<CR>==")
 vim.keymap.set("n", "J", ":m .+1<CR>==")
-
