@@ -1,10 +1,11 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		version = "v0.9.2", -- latest stable version for Neovim v0.10.4
 		build = ":TSUpdate",
 		lazy = false,
 		config = function()
-			require("nvim-treesitter.config").setup {
+			require("nvim-treesitter.configs").setup {
 				ensure_installed = { 
 					"lua", 
 					"python", 
@@ -15,6 +16,7 @@ return {
 					"bash", 
 					"ada" 
 				},
+				auto_install = true,
 				highlight = { enable = true },
 				indent = { enable = true },
 			}
