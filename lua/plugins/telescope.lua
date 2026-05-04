@@ -5,14 +5,14 @@ return {
 		version = "0.1.8", -- last version that works
 		config = function()
 			local theme = {
-				TelescopeNormal = { bg = "none" },
-				TelescopeBorder = { bg = "none", fg = "#ffffff" },
-				TelescopePromptNormal = { bg = "none" },
-				TelescopePromptBorder = { bg = "none", fg = "#ff007c" },
-				TelescopePreviewNormal = { bg = "none" },
-				TelescopePreviewBorder = { bg = "none" },
-				TelescopeSelection = { link = "Visual" },
-				TelescopeMatching = { fg = "#ff007c", bold = true },
+				TelescopeNormal = { bg = "#2E2E33" },
+				TelescopeBorder = { bg = "#2E2E33" },
+				TelescopePromptNormal = { bg = "#2E2E33" },
+				TelescopePromptBorder = { bg = "#2E2E33", fg = "#26A269" },
+				TelescopePreviewNormal = { bg = "#2E2E33" },
+				TelescopePreviewBorder = { bg = "#2E2E33" },
+				TelescopeSelection = { bg = "#196944", fg = "none", bold = true },
+				TelescopeMatching = { bg ="#2E2E33", fg = "#26A269", bold = true },
 			}
 
 			for group, settings in pairs(theme) do
@@ -21,7 +21,7 @@ return {
 
 			require("telescope").setup({
 				defaults = {
-					preview = { treesitter = false, },
+					preview = { treesitter = true, },
 					prompt_prefix = "",
 					selection_caret = " ",
 					entry_prefix = " ",
